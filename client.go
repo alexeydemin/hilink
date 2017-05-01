@@ -497,6 +497,11 @@ func (c *Client) DeviceInfo() (XMLData, error) {
 	return c.Do("api/device/information", nil)
 }
 
+// DeviceSignal retrieves general device signal information.
+func (c *Client) DeviceSignal() (XMLData, error) {
+	return c.Do("api/device/signal", nil)
+}
+
 // DeviceModeSet sets the device mode (0-project, 1-debug).
 func (c *Client) DeviceModeSet(mode uint) (bool, error) {
 	return c.doReqCheckOK("api/device/mode", XMLData{
